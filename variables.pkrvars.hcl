@@ -1,0 +1,11 @@
+azure_tenant_id       = "6cf6a4ca-4d6e-4b35-85df-755964de4062"
+azure_subscription_id = "c0e6523b-d6ce-42a1-984d-7136ac6bb0d8"
+azure_client_id       = "283bc4f5-f6be-41af-815e-f45909397a57"
+azure_client_secret   = "Iy98Q~WW7P1e7ZP0iyfKLKGfdzOajON4Hlyb1aw6"
+azure_resource_group_name   = "CharanRG"
+azure_location        = "Uk South"
+vm_size               = "Standard_B1s"
+vm_image_publisher    = "MicrosoftWindowsServer"
+vm_image_offer        = "WindowsServer"
+vm_name               = "Charanpacker"
+
