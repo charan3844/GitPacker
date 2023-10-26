@@ -1,0 +1,33 @@
+---
+name: Packer_image_creation
+on:
+  push: null
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: AZURE_CRED
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4.1.1
+      - name: Az Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      - uses: Azure/get-keyvault-secrets@v1
+        with:
+          keyvault: "testkeyvaults"
+          secrets: 'clientid, clientsecret, subscriptionid, tenantid'
+        id: myGetSecretAction
+
+      - name: Packer Image
+        run: |
+          packer plugins install github.com/hashicorp/azure
+          packer build -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
+
+        
+
+    
+     
+
+           
