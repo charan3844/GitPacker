@@ -1,3 +1,12 @@
+packer {
+  required_plugins {
+    azure = {
+      source  = "github.com/hashicorp/azure"
+      version = "~> 2"
+    }
+  }
+}
+
 variable "azure_tenant_id" {}
 variable "azure_subscription_id" {}
 variable "azure_client_id" {}
@@ -7,6 +16,7 @@ variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
 variable "vm_name" {}
 variable "vm_size" {}
+
 
 source "azure-arm" "AzureImage" {
 
