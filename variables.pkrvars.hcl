@@ -1,11 +1,9 @@
-azure_tenant_id       = "9e47f6c9-35d1-4501-9d29-6bf2185b2c5c"
-azure_subscription_id = "5bb63679-5249-46bc-86bd-63224e80afb5"
-azure_client_id       = "efbd2095-1c13-430e-821d-5be02d81b38b"
-azure_client_secret   = "H6k8Q~eaQBxwd4erHen3EORnUgmUaeOT5xXULdmy"
-azure_resource_group_name   = "TESTRG"
-azure_location        = "East US2"
-vm_size               = "Standard B2ats"
+azure_resource_group_name   = "CSGIMAGE"
+azure_location        = "East US"
 vm_image_publisher    = "MicrosoftWindowsServer"
 vm_image_offer        = "WindowsServer"
 vm_name               = "CSGtestpackerimage"
+vm_size               = "Standard B1s"
+winrm_password        = "P@$$w0rd"
+
 
