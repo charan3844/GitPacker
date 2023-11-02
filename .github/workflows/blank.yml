@@ -52,7 +52,7 @@ jobs:
            SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
            TENANT_ID: ${{ secrets.tenantId }}
            
-          run: |
+          run: 
             packer plugins install github.com/hashicorp/azure
             packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" 
     
