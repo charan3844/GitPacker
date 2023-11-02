@@ -41,7 +41,7 @@ jobs:
            TENANT_ID: ${{ secrets.tenantId }}
            
           run: 
-            packer plugins install github.com/hashicorp/azure
+            packer plugins install github.com/hashicorp/azure v2.0.1
             packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" 
     
     # This job is to do post validation on the image created as part of packer.  
