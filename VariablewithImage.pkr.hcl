@@ -12,7 +12,6 @@ variable "subscriptionId" {}
 variable "tenantId" {}
 variable "clientSecret" {}
 variable "azure_resource_group_name" {}
-variable "azure_location" {}
 variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
 variable "vm_name" {}
@@ -33,7 +32,6 @@ source "azure-arm" "AzureImage" {
   image_publisher                   = var.vm_image_publisher
   image_offer                       = var.vm_image_offer
   vm_size                           = var.vm_size
-  location                          = var.azure_location
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
  
