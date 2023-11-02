@@ -17,7 +17,7 @@ variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
 variable "vm_name" {}
 variable "vm_size" {}
-variable "winrm_password"
+variable "winrm_password" {}
 
 source "azure-arm" "AzureImage" {
 
