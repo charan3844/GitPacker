@@ -12,11 +12,12 @@ variable "subscriptionId" {}
 variable "tenantId" {}
 variable "clientSecret" {}
 variable "azure_resource_group_name" {}
+variable "azure_location" {}
 variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
 variable "vm_name" {}
 variable "vm_size" {}
-
+variable "winrm_password"
 
 source "azure-arm" "AzureImage" {
 
@@ -32,15 +33,17 @@ source "azure-arm" "AzureImage" {
   image_publisher                   = var.vm_image_publisher
   image_offer                       = var.vm_image_offer
   vm_size                           = var.vm_size
+  location                          = var.azure_location
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
+ 
   
   communicator                      = "winrm"
   winrm_insecure                    = true
   winrm_timeout                     = "5m"
   winrm_use_ssl                     = true
   winrm_username                    = "packer"
-  winrm_password                    = "P@ssw0rd!"
+  winrm_password                    = var.winrm_password
 
     azure_tags = {
     dept = "Test"
