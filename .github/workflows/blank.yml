@@ -1,49 +1,70 @@
----
-name: Packer_image_creation
+# This is the name of workflow
+name: Package Image Creation
 on:
-  push: null
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+ 
+# Jobs are listed to be run of GitHub runners-111. 
 jobs:
-  build:
-    runs-on: self-hosted
-    environment: AZURE
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.1.1
-      - name: Install Azure cli
-        run: >
-          sudo apt-get install ca-certificates curl apt-transport-https lsb-release
-          gnupg
+    # This job is to validate all the input values used in workflow.
+    Validate-Inputs:
+      if: ${{contains(vars.job_switches, 'validate') }} 
+      name: Pre Validation- Validate Inputs
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: Script using  repo variable
+          run: packer validate -syntax-only .
+          
+      # This job is to setup and run packer to create managed image.       
+    Setup-Run-Packer:
+      if: ${{contains(vars.job_switches, 'packer') }} 
+      needs: Validate-Inputs
+      name: Image Build- Setup and run packer
+      runs-on: ubuntu-latest
+      environment: CSG_CRED
+      steps:
+        - uses: actions/checkout@v1
+        - name: Set up Azure CLI
+          uses: azure/login@v1
+          with:
+             creds: ${{ secrets.CSG_AZURE_CRD }}
+  
+        - name: Packer Image
+          run: |
+            packer plugins install github.com/hashicorp/azure
+            packer build -var-file="variables.pkrvars.hcl" image-creation.pkr.hcl
 
-          curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-
-          AZ_REPO=$(lsb_release -cs)
-
-          echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-
-          sudo apt-get update
-
-          sudo apt-get install azure-cli   
-      - run: az --version
+    # This job is to do post validation on the image created as part of packer.  
+    Post-Validation:
+      if: ${{contains(vars.job_switches, 'postvalidation') }} 
+      needs: Setup-Run-Packer
+      name: Post Validation- Validate Image
+      runs-on: ubuntu-latest
       
-      - name: Az Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE }}
-      
-      - uses: Azure/get-keyvault-secrets@v1
-        with:
-          keyvault: "testkeyvaults"
-          secrets: 'clientid, clientsecret, subscriptionid, tenantid'
-        id: myGetSecretAction
+      steps:
+        - name: Testing Image Validation Script
+          run: |
+           echo "Image Validation Script on environment"
 
-      - name: Packer Image
-        run: |
-          packer plugins install github.com/hashicorp/azure
-          packer build -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
-
-        
-
+    # This job is to publish the image in the Azure compute gallery.  
+    Publish-image:
+      if: ${{contains(vars.job_switches, 'skip') }} 
+      needs:
+      - Post-Validation
+      name: Publish Image
+      runs-on: ubuntu-latest
+      environment: development
+      steps:
+        - name: Testing Image Publish Script
+          run: |
+           echo "Image Publish Script on environment : $env_var"
     
      
+   
 
-           
+
+
