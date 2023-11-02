@@ -28,6 +28,18 @@ jobs:
       environment: CSG_CRED
       steps:
         - uses: actions/checkout@v1
+        - name: Install Azure cli
+          run: >
+            sudo apt-get install ca-certificates curl apt-transport-https lsb-release
+            gnupg
+            curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+            AZ_REPO=$(lsb_release -cs)
+            echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+            sudo apt-get update
+            sudo apt-get install azure-cli
+          
+        - run: az --version
+        
         - name: Set up Azure CLI
           uses: azure/login@v1
           with:
@@ -48,15 +60,6 @@ jobs:
            Winrm_Password: ${{ secrets.winrm_password }}
            
           run: |
-            sudo apt-get install ca-certificates curl apt-transport-https lsb-release
-            gnupg
-            curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
-            AZ_REPO=$(lsb_release -cs)
-            echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
-            sudo apt-get update
-            sudo apt-get install azure-cli
-            az --version
-          
             packer plugins install github.com/hashicorp/azure
             packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" -var 'azure_resource_group_name'="${ResourceGroup_Name}" -var 'azure_location'= "${Location}" -var 'vm_image_publisher'="${Image_Publisher}" -var 'vm_image_offer'="${Image_Offer}" -var 'vm_name'="${Image_Name}" -var 'vm_size'="${Image_Size}" -var 'winrm_password'="${Winrm_Password}" 
     
