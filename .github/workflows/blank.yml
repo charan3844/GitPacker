@@ -45,7 +45,7 @@ jobs:
            Image_Offer: ${{ secrets.vm_image_offer }}
            Image_Name: ${{ secrets.vm_name }}
            Image_Size: ${{ secrets.vm_size }}
-           Winrm_Password: ${{ secrets.winrm_password}
+           Winrm_Password: ${{ secrets.winrm_password }}
            
           run: |
             packer plugins install github.com/hashicorp/azure
