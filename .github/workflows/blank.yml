@@ -1,4 +1,3 @@
-# This is the name of workflow
 name: Package Image Creation
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -39,11 +38,10 @@ jobs:
            CLIENT_SECRET: ${{ secrets.clientSecret }}
            SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
            TENANT_ID: ${{ secrets.tenantId }}
-           
-          run: >
-            packer plugins install github.com/hashicorp/azure v2.0.1
-            packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" 
-    
+          run: |
+            packer plugins install github.com/hashicorp/azure
+            packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" VariablewithImage.pkr.hcl
+ 
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
       if: ${{contains(vars.job_switches, 'postvalidation') }} 
@@ -55,7 +53,6 @@ jobs:
         - name: Testing Image Validation Script
           run: |
            echo "Image Validation Script on environment"
-
     # This job is to publish the image in the Azure compute gallery.  
     Publish-image:
       if: ${{contains(vars.job_switches, 'skip') }} 
@@ -68,9 +65,3 @@ jobs:
         - name: Testing Image Publish Script
           run: |
            echo "Image Publish Script on environment : $env_var"
-    
-     
-   
-
-
-
