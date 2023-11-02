@@ -7,10 +7,10 @@ packer {
   }
 }
 
-variable "azure_tenant_id" {}
-variable "azure_subscription_id" {}
-variable "azure_client_id" {}
-variable "azure_client_secret" {}
+variable "clientId" {}
+variable "subscriptionId" {}
+variable "tenantId" {}
+variable "clientSecret" {}
 variable "azure_resource_group_name" {}
 variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
