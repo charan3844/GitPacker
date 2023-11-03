@@ -1,5 +1,5 @@
 variable "variable_name" {
- type= string
+ type = string
 }
 
 variable "azure_resource_group_name" {}
