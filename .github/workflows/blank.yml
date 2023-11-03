@@ -13,7 +13,7 @@ jobs:
     Validate-Inputs:
       if: ${{contains(vars.job_switches, 'validate') }} 
       name: Pre Validation- Validate Inputs
-      runs-on: ubuntu-latest
+      runs-on: windows-latest
       steps:
         - uses: actions/checkout@v1
         - name: Script using  repo variable
