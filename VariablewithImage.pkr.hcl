@@ -1,15 +1,9 @@
-variable "clientId" {}
-variable "subscriptionId" {}
-variable "tenantId" {}
-variable "clientSecret" {}
-
-
 source "azure-arm" "AzureImage" {
 
-  tenant_id                         = var.tenantId
-  subscription_id                   = var.subscriptionId
-  client_id                         = var.clientId
-  client_secret                     = var.clientSecret
+  tenant_id                         = "2f8cca38-1d2f-4b01-87d0-ed2237ee2d6a"
+  subscription_id                   = "046382f3-e29e-45cc-a9f7-0cfa89f92f46"
+  client_id                         = "0edfbf0c-1356-4cfc-98c4-4f1c31068308"
+  client_secret                     = "q.w8Q~0YgvNTO1s7ynJAoSJKYbCSUvQ~pjBA7c59"
 
   build_resource_group_name         = "CSGIMAGE"
   managed_image_name                = "CSGtestpackerimage"
