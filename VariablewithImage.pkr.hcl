@@ -1,27 +1,36 @@
+variable "azure_tenant_id" {}
+variable "azure_subscription_id" {}
+variable "azure_client_id" {}
+variable "azure_client_secret" {}
+variable "azure_resource_group_name" {}
+variable "vm_image_publisher" {}
+variable "vm_image_offer" {}
+variable "vm_name" {}
+variable "vm_size" {}
+
 source "azure-arm" "AzureImage" {
 
-  tenant_id                         = "2f8cca38-1d2f-4b01-87d0-ed2237ee2d6a"
-  subscription_id                   = "046382f3-e29e-45cc-a9f7-0cfa89f92f46"
-  client_id                         = "0edfbf0c-1356-4cfc-98c4-4f1c31068308"
-  client_secret                     = "q.w8Q~0YgvNTO1s7ynJAoSJKYbCSUvQ~pjBA7c59"
+  tenant_id                         = var.azure_tenant_id
+  subscription_id                   = var.azure_subscription_id 
+  client_id                         = var.azure_client_id 
+  client_secret                     = var.azure_client_secret
 
-  build_resource_group_name         = "CSGrg"
-  managed_image_name                = "CSGtestpackerimage"
-  managed_image_resource_group_name = "CSGrg"
+  build_resource_group_name         = var.azure_resource_group_name
+  managed_image_name                = var.vm_name
+  managed_image_resource_group_name = var.azure_resource_group_name
 
-  image_publisher                   = "MicrosoftWindowsServer"
-  image_offer                       = "WindowsServer"
-  vm_size                           = "Standard_B1s"
+  image_publisher                   = var.vm_image_publisher
+  image_offer                       = var.vm_image_offer
+  vm_size                           = var.vm_size
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
- 
   
   communicator                      = "winrm"
   winrm_insecure                    = true
   winrm_timeout                     = "5m"
   winrm_use_ssl                     = true
   winrm_username                    = "packer"
-  winrm_password                    = "P@$$w0rd"
+  winrm_password                    = "P@ssw0rd!"
 
     azure_tags = {
     dept = "Test"
