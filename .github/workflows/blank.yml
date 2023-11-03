@@ -53,7 +53,7 @@ jobs:
            TENANT_ID: ${{ secrets.tenantId }}
            
           run:
-            packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" -var 'azure_resource_group_name'="${ResourceGroup_Name}" -var 'azure_location'= "${Location}" -var 'vm_image_publisher'="${Image_Publisher}" -var 'vm_image_offer'="${Image_Offer}" -var 'vm_name'="${Image_Name}" -var 'vm_size'="${Image_Size}" -var 'winrm_password'="${Winrm_Password}" 
+            packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}"
     
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
