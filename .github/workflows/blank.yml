@@ -47,14 +47,11 @@ jobs:
   
         - name: Build Azure Image
           env:
-           CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-           CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-           SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-           TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+             Packer_Image_Creds: ${{ secrets.CSG_CRED }}
        
            
           run: |
-            packer build -var 'AZURE_CLIENT_ID'="${CLIENT_ID}" -var 'AZURE_CLIENT_SECRET'="${CLIENT_SECRET}" -var 'AZURE_SUBSCRIPTION_ID'="${SUBSCRIPTION_ID}" -var 'AZURE_TENANT_ID'="${TENANT_ID}" -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl 
+            packer build -var 'variable_name={{ env.Packer_Image_Creds }}' VariablewithImage.pkr.hcl 
     
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
