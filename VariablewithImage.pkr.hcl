@@ -2,12 +2,7 @@ variable "clientId" {}
 variable "subscriptionId" {}
 variable "tenantId" {}
 variable "clientSecret" {}
-variable "azure_resource_group_name" {}
-variable "vm_image_publisher" {}
-variable "vm_image_offer" {}
-variable "vm_name" {}
-variable "vm_size" {}
-variable "winrm_password" {}
+
 
 source "azure-arm" "AzureImage" {
 
@@ -16,13 +11,13 @@ source "azure-arm" "AzureImage" {
   client_id                         = var.clientId
   client_secret                     = var.clientSecret
 
-  build_resource_group_name         = var.azure_resource_group_name
-  managed_image_name                = var.vm_name
-  managed_image_resource_group_name = var.azure_resource_group_name
+  build_resource_group_name         = "CSGIMAGE"
+  managed_image_name                = "CSGtestpackerimage"
+  managed_image_resource_group_name = "CSGIMAGE"
 
-  image_publisher                   = var.vm_image_publisher
-  image_offer                       = var.vm_image_offer
-  vm_size                           = var.vm_size
+  image_publisher                   = "MicrosoftWindowsServer"
+  image_offer                       = "WindowsServer"
+  vm_size                           = "Standard B1s"
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
  
@@ -32,7 +27,7 @@ source "azure-arm" "AzureImage" {
   winrm_timeout                     = "5m"
   winrm_use_ssl                     = true
   winrm_username                    = "packer"
-  winrm_password                    = var.winrm_password
+  winrm_password                    = "P@$$w0rd"
 
     azure_tags = {
     dept = "Test"
