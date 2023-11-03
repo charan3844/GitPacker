@@ -11,7 +11,7 @@ source "azure-arm" "AzureImage" {
 
   image_publisher                   = "MicrosoftWindowsServer"
   image_offer                       = "WindowsServer"
-  vm_size                           = "Standard B1s"
+  vm_size                           = "Standard_B1s"
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
  
