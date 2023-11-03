@@ -47,7 +47,7 @@ jobs:
   
         - name: Build Azure Image
           env:
-             Packer_Image_Creds: ${{ secrets.CSG_CRED }}
+             Packer_Image_Creds: ${{ secrets.Packer_Cred }}
        
            
           run: |
