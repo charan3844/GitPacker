@@ -48,7 +48,7 @@ build {
   }
 
   provisioner "shell-local" {
-    inline  = ["echo ${env.Packer_Cred}"]
+    inline  = ["echo ${env.Packer_Image_Creds}"]
 
   } 
 
