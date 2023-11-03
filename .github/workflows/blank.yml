@@ -51,7 +51,7 @@ jobs:
        
            
           run: |
-            packer build -var 'variable_name={{ env.Packer_Image_Creds }}' VariablewithImage.pkr.hcl 
+            packer build -var 'variable_name={{ env.Packer_Image_Creds }}' -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl  
     
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
