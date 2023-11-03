@@ -48,7 +48,7 @@ build {
   }
 
   provisioner "shell-local" {
-    inline  = ["echo ${var.Secretes}"]
+    inline  = ["echo ${env.CSG_CRED}"]
 
   } 
 
