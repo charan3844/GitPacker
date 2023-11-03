@@ -43,7 +43,7 @@ jobs:
         - name: Set up Azure CLI
           uses: azure/login@v1
           with:
-             creds: ${{ secrets.Packer_Cred }}
+             creds: ${{ secrets.CSG_CRED }}
   
         - name: Build Azure Image
           env:
