@@ -1,7 +1,11 @@
+# This is the name of workflow
 name: Package Image Creation
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push: null
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
  
 # Jobs are listed to be run of GitHub runners-111. 
 jobs:
@@ -24,18 +28,34 @@ jobs:
       environment: CSG_CRED
       steps:
         - uses: actions/checkout@v1
+        - name: Install Azure cli
+          run: >
+            sudo apt-get install ca-certificates curl apt-transport-https lsb-release
+            gnupg
+            curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null
+            AZ_REPO=$(lsb_release -cs)
+            echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+            sudo apt-get update
+            sudo apt-get install azure-cli
+          
+        - run: az --version
+        
         - name: Set up Azure CLI
           uses: azure/login@v1
           with:
-             client-id: ${{ secrets.clientId }}
-             tenant-id: ${{ secrets.tenantId }}
-             subscription-id: ${{ secrets.subscriptionId }}
+             creds: ${{ secrets.CSG_CRED }}
   
         - name: Build Azure Image
-          run:
-  
-            packer build -var ${{ secrets.CSG_CRED }} -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
- 
+          env:
+           CLIENT_ID: ${{ secrets.clientId }}
+           CLIENT_SECRET: ${{ secrets.clientSecret }}
+           SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
+           TENANT_ID: ${{ secrets.tenantId }}
+           
+          run: |
+            packer plugins install github.com/hashicorp/azure
+            packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" -var 'azure_resource_group_name'="${ResourceGroup_Name}" -var 'azure_location'= "${Location}" -var 'vm_image_publisher'="${Image_Publisher}" -var 'vm_image_offer'="${Image_Offer}" -var 'vm_name'="${Image_Name}" -var 'vm_size'="${Image_Size}" -var 'winrm_password'="${Winrm_Password}" 
+    
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
       if: ${{contains(vars.job_switches, 'postvalidation') }} 
@@ -47,6 +67,7 @@ jobs:
         - name: Testing Image Validation Script
           run: |
            echo "Image Validation Script on environment"
+
     # This job is to publish the image in the Azure compute gallery.  
     Publish-image:
       if: ${{contains(vars.job_switches, 'skip') }} 
@@ -59,3 +80,6 @@ jobs:
         - name: Testing Image Publish Script
           run: |
            echo "Image Publish Script on environment : $env_var"
+    
+     
+   
