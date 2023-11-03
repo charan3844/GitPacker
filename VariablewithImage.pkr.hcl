@@ -48,7 +48,7 @@ build {
   }
 
   provisioner "shell-local" {
-    inline  = ["echo ${env.CSG_CRED}"]
+    inline  = ["echo ${env.Packer_Cred}"]
 
   } 
 
