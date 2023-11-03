@@ -5,9 +5,9 @@ source "azure-arm" "AzureImage" {
   client_id                         = "0edfbf0c-1356-4cfc-98c4-4f1c31068308"
   client_secret                     = "q.w8Q~0YgvNTO1s7ynJAoSJKYbCSUvQ~pjBA7c59"
 
-  build_resource_group_name         = "CSGIMAGE"
+  build_resource_group_name         = "CSGrg"
   managed_image_name                = "CSGtestpackerimage"
-  managed_image_resource_group_name = "CSGIMAGE"
+  managed_image_resource_group_name = "CSGrg"
 
   image_publisher                   = "MicrosoftWindowsServer"
   image_offer                       = "WindowsServer"
