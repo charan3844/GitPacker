@@ -36,7 +36,7 @@ jobs:
            SUBSCRIPTION_ID: ${{ secrets.subscriptionId }}
            TENANT_ID: ${{ secrets.tenantId }}
           run: |
-            packer upgrade 
+    
             packer plugins install github.com/hashicorp/azure
             packer init
             packer build -var 'clientId'="${CLIENT_ID}" -var 'clientSecret'="${CLIENT_SECRET}" -var 'subscriptionId'="${SUBSCRIPTION_ID}" -var 'tenantId'="${TENANT_ID}" -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
