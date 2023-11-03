@@ -48,7 +48,7 @@ build {
   }
 
   provisioner "shell-local" {
-    inline  = ["echo ${var.variable_name}"]
+    inline  = ["echo ${var.Secretes}"]
 
   } 
 
