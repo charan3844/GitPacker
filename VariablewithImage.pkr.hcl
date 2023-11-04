@@ -1,5 +1,6 @@
 variable "Secretes" {
  type = string
+ default = "default_value"
 }
 
 variable "azure_resource_group_name" {}
@@ -48,7 +49,7 @@ build {
   }
 
   provisioner "shell-local" {
-    inline  = ["echo ${env.Packer_Cred}"]
+    inline  = ["echo ${var.Secretes}"]
 
   } 
 
