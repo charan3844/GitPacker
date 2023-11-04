@@ -8,7 +8,6 @@ variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
 variable "vm_name" {}
 variable "vm_size" {}
-
 source "azure-arm" "AzureImage" {
 
   tenant_id                         = var.Secretes
