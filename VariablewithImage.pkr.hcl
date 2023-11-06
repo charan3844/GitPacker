@@ -1,28 +1,18 @@
-variable "az_tenant_id" {}
-variable "az_subscription_id" {}
-variable "az_client_id" {}
-variable "az_client_secret" {}
-variable "azure_resource_group_name" {}
-variable "vm_image_publisher" {}
-variable "vm_image_offer" {}
-variable "vm_name" {}
-variable "vm_size" {}
-
 source "azure-arm" "AzureImage" {
  
-  tenant_id                         = var.az_tenant_id
-  subscription_id                   = var.az_subscription_id 
-  client_id                         = var.az_client_id 
-  client_secret                     = var.az_client_secret
+  tenant_id                         = env.azure_tenant_id
+  subscription_id                   = env.azure_subscription_id 
+  client_id                         = env.azure_client_id 
+  client_secret                     = env.azure_client_secret
 
 
-  build_resource_group_name         = var.azure_resource_group_name
-  managed_image_name                = var.vm_name               
-  managed_image_resource_group_name = var.azure_resource_group_name
+  build_resource_group_name         = RG1
+  managed_image_name                = PackerImage              
+  managed_image_resource_group_name = RG1
 
-  image_publisher                   = var.vm_image_publisher    
-  image_offer                       = var.vm_image_offer        
-  vm_size                           = var.vm_size               
+  image_publisher                   = MicrosoftWindowsServer
+  image_offer                       = WindowsServer        
+  vm_size                           = Standard_B1s
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
   
