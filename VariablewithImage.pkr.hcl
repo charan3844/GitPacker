@@ -10,7 +10,7 @@ variable "vm_size" {}
 
 variable "Secretes" {
 type = string
-default = "default_value"
+default = " "
 
 }
 
