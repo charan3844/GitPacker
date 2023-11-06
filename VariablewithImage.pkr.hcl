@@ -10,7 +10,7 @@ variable "vm_size" {}
 
 variable "Secretes" {
 type = string
-default = " "
+default = var.Secretes
 
 }
 
@@ -55,7 +55,7 @@ build {
   }
 
   provisioner "shell-local" {
-    inline  = ["echo ${env.Packer_Creds}"]
+    inline  = ["echo ${var.Secretes}"]
 
   } 
 
