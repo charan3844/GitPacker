@@ -9,7 +9,7 @@ source "azure-arm" "AzureImage" {
   tenant_id                         = env.tenant_id
   subscription_id                   = env.subscription_id
   client_id                         = env.client_id
-  client_secret                     = env.client_secret"
+  client_secret                     = env.client_secret
 
 
   build_resource_group_name         = "RG1"
