@@ -15,7 +15,7 @@ variable "az_client_id"  {
 
 varible "az_client_secret" {
   type = string
-  default = var.clientsecret
+  default = var.clientSecret
 }
 
 
