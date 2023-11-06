@@ -42,19 +42,16 @@ jobs:
         
         - name: Set up Azure CLI
           uses: azure/login@v1
-          with:
-             creds: ${{ secrets.CSG_CRED }}
   
         - name: Setup Packer
           uses: hashicorp/setup-packer@main
-        - name: Build Azure Image
-       
-          run: >
-            packer build -var 'az_tenant_id =${{ secrets.tenantId }}' \
-                         -var 'az_subscription_id =${{ secrets.subscriptionId }}' \
-                         -var 'az_client_id =${{ secrets.clientId }}' \
-                         -var 'az_client_secret =${{ secrets.clientSecret }}' \
-                          VariablewithImage.pkr.hcl  
+          with:
+             creds: ${{ secrets.CSG_CRED }}
+             
+        - name: Creating Image
+          run: packer build -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
+             
+                       
     
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
