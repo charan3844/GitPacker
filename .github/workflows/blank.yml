@@ -59,7 +59,7 @@ jobs:
             azure_tenant_id: ${{ secrets.TENANT_ID }}
   
           run: >
-            packer build -var 'client_id=${{ secrets.CLIENT_ID }}' \
+            packer build -force -var 'client_id=${{ secrets.CLIENT_ID }}' \
                             -var 'client_secret=${{ secrets.CLIENT_SECRET }}' \
                             -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}' \
                             -var 'tenant_id=${{ secrets.TENANT_ID }}'
