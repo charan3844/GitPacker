@@ -3,7 +3,7 @@ variable "az_tenant_id" {
    default = var.clientId
 }
 
-variable "az_subscription_id {
+variable "az_subscription_id" {
   type = string
   default = var.subscriptionId
 }
