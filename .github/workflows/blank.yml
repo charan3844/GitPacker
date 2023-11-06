@@ -53,7 +53,7 @@ jobs:
             packer build -var 'tenant_id={{ secrets.tenantId }}' \
                          -var 'subscription_id={{ secrets.subscriptionId }}' \
                          -var 'client_id={{ secrets.clientId }}' \
-                         -var 'client_secret={{ secrets.cleintSecret }}' \
+                         -var 'client_secret={{ secrets.clientSecret }}' \
                          VariablewithImage.pkr.hcl  
     
     # This job is to do post validation on the image created as part of packer.  
