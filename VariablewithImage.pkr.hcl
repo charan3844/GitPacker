@@ -8,6 +8,11 @@ variable "vm_image_offer" {}
 variable "vm_name" {}
 variable "vm_size" {}
 
+variable "Secretes" {
+type = string
+
+}
+
 
 source "azure-arm" "AzureImage" {
 
