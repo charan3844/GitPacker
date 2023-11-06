@@ -58,7 +58,11 @@ jobs:
             azure_subscritpio_id: ${{ secrets.SUBSCRIPTION_ID }}
             azure_tenant_id: ${{ secrets.TENANT_ID }}
   
-          run: packer build  VariablewithImage.pkr.hcl
+          run: packer build -var 'client_id=${{ secrets.CLIENT_ID }}' \
+                            -var 'client_secret=${{ secrets.CLIENT_SECRET }}' \
+                            -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}' \
+                            -var 'tenant_id=${{ secrets.TENANT_ID }}'
+                            VariablewithImage.pkr.hcl
                                  
     
     # This job is to do post validation on the image created as part of packer.  
