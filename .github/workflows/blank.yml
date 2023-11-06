@@ -2,10 +2,9 @@
 name: Package Image Creation
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  push: 
+env:
+  PRODUCT_VERSION: "latest"
  
 # Jobs are listed to be run of GitHub runners-111. 
 jobs:
@@ -48,14 +47,19 @@ jobs:
   
         - name: Setup Packer
           uses: hashicorp/setup-packer@main
+          id: setup
           with:
-             creds: ${{ secrets.CSG_CRED }}
-             
-             
-        - name: Creating Image
-          run: packer build -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
-             
-                       
+            version: "1.8.3"
+            
+        - name: build custom image
+          env:
+            azure_client_id: ${{ secrets.CLIENT_ID }}
+            azure_client_secret: ${{ secrets.CLIENT_SECRET }}
+            azure_subscritpio_id: ${{ secrets.SUBSCRIPTION_ID }}
+            azure_tenant_id: ${{ secrets.TENANT_ID }}
+  
+          run: packer build  VariablewithImage.pkr.hcl
+                                 
     
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
