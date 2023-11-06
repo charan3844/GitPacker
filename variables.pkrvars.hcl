@@ -1,16 +1,16 @@
 variable "az_tenant_id" {
    type = string
-   default = var.client_Id
+   default = var.clientId
 }
 
 variable "az_subscription_id {
   type = string
-  default = var.subscription_Id
+  default = var.subscriptionId
 }
 
 variable "az_client_id"  {
   type =string
-  default = var.client_Id
+  default = var.clientId
 }
 
 varible "az_client_secret" {
