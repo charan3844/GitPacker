@@ -53,10 +53,10 @@ jobs:
         - name: build custom image
   
           run: |
-            packer build -var 'client_id=${{ CLIENT_ID }}' \
-                            -var 'client_secret=${{ CLIENT_SECRET }}' \
-                            -var 'subscription_id=${{ SUBSCRIPTION_ID }}' \
-                            -var 'tenant_id=${{ TENANT_ID }}' \
+            packer build -var 'client_id=${{ secrets.CLIENT_ID }}' \
+                            -var 'client_secret=${{ secrets.CLIENT_SECRET }}' \
+                            -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}' \
+                            -var 'tenant_id=${{ secrets.TENANT_ID }}' \
                             VariablewithImage.pkr.hcl
                                  
     
