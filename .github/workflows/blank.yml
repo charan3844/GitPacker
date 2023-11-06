@@ -46,7 +46,7 @@ jobs:
              creds: ${{ secrets.CSG_CRED }}
   
         - name: Setup Packer
-          uses: hashicorp/setup-packer@v2
+          uses: hashicorp/setup-packer@v1
 
         - name: Build Azure Image
        
