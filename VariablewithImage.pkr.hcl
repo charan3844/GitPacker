@@ -6,10 +6,10 @@ variable "client_secret" {}
 
 source "azure-arm" "AzureImage" {
  
-  tenant_id                         = "env.azure_tenant_id"
-  subscription_id                   = "env.azure_subscritpio_id"
-  client_id                         = "env.azure_client_id"
-  client_secret                     = "env.azure_client_secret"
+  tenant_id                         = var.tenant_id
+  subscription_id                   = var.subscription_id
+  client_id                         = var.client_id
+  client_secret                     = var.client_secret"
 
 
   build_resource_group_name         = "RG1"
