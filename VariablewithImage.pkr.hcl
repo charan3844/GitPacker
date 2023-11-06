@@ -12,9 +12,9 @@ source "azure-arm" "AzureImage" {
 
   
   tenant_id                         = var.Azure_Tenant_Id
-  subscription_id                   = var.Subscription_Id 
-  client_id                         = var.Client_Id
-  client_secret                     = var.Client_Secret
+  subscription_id                   = var.Azure_Client_Secret 
+  client_id                         = var.Azure_Client_Id
+  client_secret                     = var.Azure_Client_Secret
 
   build_resource_group_name         = var.azure_resource_group_name
   managed_image_name                = var.vm_name               
