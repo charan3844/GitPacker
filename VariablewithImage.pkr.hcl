@@ -1,7 +1,3 @@
-variable "CLIENT_ID" {}
-variable "CLIENT_SECRET" {}
-variable "SUBSCRIPTION_ID" {}
-variable "TENANT_ID" {}
 variable "azure_resource_group_name" {}
 variable "vm_image_publisher" {}
 variable "vm_image_offer" {}
