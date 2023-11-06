@@ -52,7 +52,7 @@ jobs:
             version: "1.8.3"
             
         - name: build custom image
-          env:
+          env: >
             azure_client_id: ${{ secrets.CLIENT_ID }}
             azure_client_secret: ${{ secrets.CLIENT_SECRET }}
             azure_subscritpio_id: ${{ secrets.SUBSCRIPTION_ID }}
