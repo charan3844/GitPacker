@@ -5,7 +5,6 @@ on:
   push: 
 env:
   PRODUCT_VERSION: "latest"
- 
 # Jobs are listed to be run of GitHub runners-111. 
 jobs:
     # This job is to validate all the input values used in workflow.
@@ -17,7 +16,6 @@ jobs:
         - uses: actions/checkout@v1
         - name: Script using  repo variable
           run: packer validate -syntax-only .
-          
       # This job is to setup and run packer to create managed image.       
     Setup-Run-Packer:
       if: ${{contains(vars.job_switches, 'packer') }} 
@@ -36,42 +34,36 @@ jobs:
             echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
             sudo apt-get update
             sudo apt-get install azure-cli
-          
         - run: az --version
-        
         - name: Set up Azure CLI
           uses: azure/login@v1
           with:
              creds: ${{ secrets.CSG_CRED }}
-
+ 
         - name: Setup Packer
           uses: hashicorp/setup-packer@main
           id: setup
           with:
             version: "1.8.3"
-            
-       
-        - name: Build Azure Image
-          env:
-             Packer_Image_Creds: ${{ secrets.Packer_Cred }}
-       
-           
+        - name: build custom image
           run: |
-            packer build -var 'Secretes={{ env.Packer_Image_Creds }}' VariablewithImage.pkr.hcl  
-                                 
-    
+            packer build -var 'client_id=${{ secrets.CLIENT_ID }}' \
+                            -var 'client_secret=${{ secrets.CLIENT_SECRET }}' \
+                            -var 'subscription_id=${{ secrets.SUBSCRIPTION_ID }}' \
+                            -var 'tenant_id=${{ secrets.TENANT_ID }}' \
+                            VariablewithImage.pkr.hcl
+
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
       if: ${{contains(vars.job_switches, 'postvalidation') }} 
       needs: Setup-Run-Packer
       name: Post Validation- Validate Image
       runs-on: ubuntu-latest
-      
       steps:
         - name: Testing Image Validation Script
           run: |
            echo "Image Validation Script on environment"
-
+ 
     # This job is to publish the image in the Azure compute gallery.  
     Publish-image:
       if: ${{contains(vars.job_switches, 'skip') }} 
@@ -84,6 +76,3 @@ jobs:
         - name: Testing Image Publish Script
           run: |
            echo "Image Publish Script on environment : $env_var"
-    
-     
-   
