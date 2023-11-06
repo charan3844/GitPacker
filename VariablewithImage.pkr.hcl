@@ -1,13 +1,3 @@
-variable "az_tenant_id" {}
-variable "az_subscription_id" {}
-variable "az_client_id" {}
-variable "az_client_secret" {}
-variable "azure_resource_group_name" {}
-variable "vm_name" {}
-variable "vm_image_publisher" {}
-variable "vm_image_offer" {}
-variable "vm_size" {}
-
 source "azure-arm" "AzureImage" {
  
   tenant_id                         = var.az_tenant_id
