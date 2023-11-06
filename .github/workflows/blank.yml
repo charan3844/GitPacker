@@ -42,7 +42,10 @@ jobs:
         - name: Set up Azure CLI
           uses: azure/login@v1
           with:
-             creds: ${{ secrets.CSG_CRED }}
+            client_id: ${{ secrets.CLIENT_ID }}
+            client_secret: ${{ secrets.CLIENT_SECRET }}
+            subscritpio_id: ${{ secrets.SUBSCRIPTION_ID }}
+            tenant_id: ${{ secrets.TENANT_ID }}
 
   
         - name: Setup Packer
