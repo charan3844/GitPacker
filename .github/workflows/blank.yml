@@ -49,7 +49,7 @@ jobs:
           uses: hashicorp/setup-packer@main
         - name: Build Azure Image
        
-          run: |
+          run: 
             packer build -var 'tenant_id={{ secrets.tenantId }}' \
                          -var 'subscription_id={{ secrets.subscriptionId }}' \
                          -var 'client_id={{ secrets.clientId }}' \
