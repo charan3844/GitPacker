@@ -1,30 +1,19 @@
-variable "Packer_Cred" {
-  type    = string
-  default = "default_value"
-}
-
-variable "azure_resource_group_name" {}
-variable "vm_image_publisher" {}
-variable "vm_image_offer" {}
-variable "vm_name" {}
-variable "vm_size" {}
+variable "tenant_id" {}
+variable "subscription_id {}
+variable "client_id" 
+variable "client_secret" {}
 
 
 
 source "azure-arm" "AzureImage" {
 
-  tenant_id                         = var.Packer_Cred
-  subscription_id                   = var.Packer_Cred                 
-  client_id                         = var.Packer_Cred
-  client_secret                     = var.Packer_Cred
+  build_resource_group_name         = RG1
+  managed_image_name                = PackerImage
+  managed_image_resource_group_name = RG1
 
-  build_resource_group_name         = var.azure_resource_group_name
-  managed_image_name                = var.vm_name
-  managed_image_resource_group_name = var.azure_resource_group_name
-
-  image_publisher                   = var.vm_image_publisher
-  image_offer                       = var.vm_image_offer
-  vm_size                           = var.vm_size
+  image_publisher                   = MicrosoftWindowsServer
+  image_offer                       = WindowsServer
+  vm_size                           = Standard_B1s
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
   
