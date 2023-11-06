@@ -1,9 +1,6 @@
-variable "Secretes" 
-{
-
-type = string
-default = "default_value"
-
+variable "Secretes" {
+  type    = string
+  default = "default_value"
 }
 
 variable "azure_resource_group_name" {}
