@@ -7,6 +7,12 @@ variable "client_secret" {}
 
 source "azure-arm" "AzureImage" {
 
+  
+  tenant_id                         = var.azure_tenant_id
+  subscription_id                   = var.azure_subscription_id 
+  client_id                         = var.azure_client_id 
+  client_secret                     = var.azure_client_secret
+
   build_resource_group_name         = RG1
   managed_image_name                = PackerImage
   managed_image_resource_group_name = RG1
