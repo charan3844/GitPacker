@@ -12,7 +12,7 @@ source "azure-arm" "AzureImage" {
 
   
   tenant_id                         = var.Azure_Tenant_Id
-  subscription_id                   = var.Azure_Client_Secret 
+  subscription_id                   = var.Azure_Subscription_Id
   client_id                         = var.Azure_Client_Id
   client_secret                     = var.Azure_Client_Secret
 
