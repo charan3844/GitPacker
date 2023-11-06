@@ -2,6 +2,8 @@ variable "Secretes" {
   type = string
   default = "default_value"
 
+}
+
 
 source "azure-arm" "AzureImage" {
  
