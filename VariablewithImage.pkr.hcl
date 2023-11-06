@@ -1,8 +1,7 @@
-variable "Secretes" {
-  type = string
-  default = "default_value"
-
-}
+variable "tenant_id" {}
+variable "subscription_id" {}
+variable "client_id" {}
+variable "client_secret" {}
 
 
 source "azure-arm" "AzureImage" {
