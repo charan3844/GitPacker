@@ -51,17 +51,12 @@ jobs:
             version: "1.8.3"
             
         - name: build custom image
-          env: 
-            azure_client_id: ${{ secrets.CLIENT_ID }}
-            azure_client_secret: ${{ secrets.CLIENT_SECRET }}
-            azure_subscritpio_id: ${{ secrets.SUBSCRIPTION_ID }}
-            azure_tenant_id: ${{ secrets.TENANT_ID }}
   
           run: |
-            packer build -var "client_id=${{ env.azure_client_id}}" \
-                            -var "client_secret=${{ env.azure_client_secret}}" \
-                            -var "subscription_id=${{ env.azure_subscritpio_id }}" \
-                            -var "tenant_id=${{ env.azure_tenant_id }}" \
+            packer build -var 'client_id=${{ CLIENT_ID }}' \
+                            -var 'client_secret=${{ CLIENT_SECRET }}' \
+                            -var 'subscription_id=${{ SUBSCRIPTION_ID }}' \
+                            -var 'tenant_id=${{ TENANT_ID }}' \
                             VariablewithImage.pkr.hcl
                                  
     
