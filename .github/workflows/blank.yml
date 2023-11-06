@@ -54,7 +54,7 @@ jobs:
                          -var 'subscription_id={{ secrets.subscriptionId }}' \
                          -var 'client_id={{ secrets.clientId }}' \
                          -var 'client_secret={{ secrets.clientSecret }}' \
-                         VariablewithImage.pkr.hcl  
+                         -var-file= "variables.pkrvars.hcl" VariablewithImage.pkr.hcl  
     
     # This job is to do post validation on the image created as part of packer.  
     Post-Validation:
