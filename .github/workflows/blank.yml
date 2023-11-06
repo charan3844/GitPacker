@@ -42,11 +42,15 @@ jobs:
         
         - name: Set up Azure CLI
           uses: azure/login@v1
+          with:
+             creds: ${{ secrets.CSG_CRED }}
+
   
         - name: Setup Packer
           uses: hashicorp/setup-packer@main
           with:
              creds: ${{ secrets.CSG_CRED }}
+             
              
         - name: Creating Image
           run: packer build -var-file="variables.pkrvars.hcl" VariablewithImage.pkr.hcl
