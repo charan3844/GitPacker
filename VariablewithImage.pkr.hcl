@@ -1,3 +1,9 @@
+variable "azure_tenant_id" {}
+variable "azure_subscription_id" {}
+variable "azure_client_id" {}
+variable "azure_client_secret" {}
+
+
 source "azure-arm" "AzureImage" {
  
   tenant_id                         = env.azure_tenant_id
