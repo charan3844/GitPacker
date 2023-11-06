@@ -1,4 +1,4 @@
-variable "Secretes" {
+variable "Packer_Cred" {
   type    = string
   default = "default_value"
 }
