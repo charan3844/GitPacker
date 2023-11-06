@@ -13,10 +13,10 @@ variable "vm_size" {}
 
 source "azure-arm" "AzureImage" {
 
-  tenant_id                         = var.Secretes
-  subscription_id                   = var.Secretes                 
-  client_id                         = var.Secretes
-  client_secret                     = var.Secretes
+  tenant_id                         = var.Packer_Cred
+  subscription_id                   = var.Packer_Cred                 
+  client_id                         = var.Packer_Cred
+  client_secret                     = var.Packer_Cred
 
   build_resource_group_name         = var.azure_resource_group_name
   managed_image_name                = var.vm_name
