@@ -46,7 +46,7 @@ build {
   }
 
   provisioner "shell-local" {
-     inline = ["echo ${var.Secrets}"]
+     inline = ["echo ${env.Packer_Image_Creds}"]
 
   }
 
