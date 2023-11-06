@@ -2,7 +2,7 @@ source "azure-arm" "AzureImage" {
  
   tenant_id                         = env.azure_tenant_id
   subscription_id                   = env.azure_subscription_id 
-  client_id                         = env.azure_client_id 
+  client_id                         = env.azure_client_id
   client_secret                     = env.azure_client_secret
 
 
