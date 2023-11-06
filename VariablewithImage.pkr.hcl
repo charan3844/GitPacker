@@ -1,12 +1,10 @@
-packer {
-  required_plugins {
-    azure = {
-      source  = "github.com/hashicorp/azure"
-      version = "~> 2"
-    }
-  }
-}
+variable "Secretes" 
+{
 
+type = string
+default = "default_value"
+
+}
 
 variable "azure_resource_group_name" {}
 variable "vm_image_publisher" {}
@@ -14,11 +12,6 @@ variable "vm_image_offer" {}
 variable "vm_name" {}
 variable "vm_size" {}
 
-variable "Secretes" {
-type = string
-default = "default_value"
-
-}
 
 
 source "azure-arm" "AzureImage" {
