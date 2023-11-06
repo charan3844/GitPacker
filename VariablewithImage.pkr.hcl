@@ -1,7 +1,7 @@
-variable "tenant_id" {}
-variable "subscription_id" {}
-variable "client_id" {}
-variable "client_secret" {}
+variable "TENANT_ID" {}
+variable "SUBSCRIPTION_ID" {}
+variable "CLIENT_ID" {}
+variable "CLIENT_SECRET" {}
 variable "azure_resource_group_name" {}
 variable "vm_name" {}
 variable "vm_image_publisher" {}
@@ -11,10 +11,10 @@ variable "vm_size" {}
 source "azure-arm" "AzureImage" {
 
   
-  tenant_id                         = var.tenant_id
-  subscription_id                   = var.subscription_id 
-  client_id                         = var.client_id 
-  client_secret                     = var.client_secret
+  tenant_id                         = var.TENANT_ID
+  subscription_id                   = var.SUBSCRIPTION_ID 
+  client_id                         = var.CLIENT_ID 
+  client_secret                     = var.CLIENT_SECRET
 
   build_resource_group_name         = var.azure_resource_group_name
   managed_image_name                = var.vm_name               
