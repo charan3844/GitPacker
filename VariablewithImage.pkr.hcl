@@ -12,13 +12,13 @@ source "azure-arm" "AzureImage" {
   client_secret                     = env.azure_client_secret
 
 
-  build_resource_group_name         = RG1
-  managed_image_name                = PackerImage              
-  managed_image_resource_group_name = RG1
+  build_resource_group_name         = "RG1"
+  managed_image_name                = "PackerImage"              
+  managed_image_resource_group_name = "RG1"
 
-  image_publisher                   = MicrosoftWindowsServer
-  image_offer                       = WindowsServer        
-  vm_size                           = Standard_B1s
+  image_publisher                   = "MicrosoftWindowsServer"
+  image_offer                       = "WindowsServer"       
+  vm_size                           = "Standard_B1s"
   os_type                           = "Windows"
   image_sku                         = "2022-Datacenter"
   
