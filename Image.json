@@ -1,16 +1,3 @@
-{
-  "variables": {
-
-    "azure_tenant_id": "",
-    "azure_subscription_id": "",
-    "azure_client_id": "",
-    "azure_client_secret": "",
-    "resource_group_name": "",
-    "vm_size": "",
-    "vm_name": ""
-
-  },
-
   "builders": [
 
     {
@@ -19,15 +6,21 @@
       "subscription_id": "{{user `azure_subscription_id`}}",
       "client_id": "{{user `azure_client_id`}}",
       "client_secret": "{{user `azure_client_secret`}}",
-      "build_resource_group_name": "{{user `resource_group_name`}}",
+      
       "os_type": "Windows",
       "image_publisher": "MicrosoftWindowsServer",
       "image_offer": "WindowsServer",
       "image_sku": "2022-Datacenter",
       "image_version": "latest",
-      "vm_size": "{{user `vm_size`}}",
-      "managed_image_name": "packer-image-{{user `vm_name`}}",
-      "managed_image_resource_group_name": "{{user `resource_group_name`}}",
+      
+      "build_resource_group_name": "rg_compute_ei_dev_ue",
+      "vm_size": "Standard_DS2_v2",
+      "managed_image_name": "packer-image-ImageVM3",
+      "managed_image_resource_group_name": "rg_compute_ei_dev_ue",
+      "VirtualNetworkRG": "rg_network_ei_dev_ue",
+      "VirtualNetwork": "vnet_ei_dev_ue",
+      "Subnet": "subnet_ei_dev_ue_1",
+      
       "communicator": "winrm",
       "winrm_use_ssl": true,
       "winrm_insecure": true,
