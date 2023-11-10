@@ -1,0 +1,63 @@
+{
+  "variables": {
+
+    "azure_tenant_id": "",
+    "azure_subscription_id": "",
+    "azure_client_id": "",
+    "azure_client_secret": "",
+    "resource_group_name": "",
+    "vm_size": "",
+    "vm_name": ""
+
+  },
+
+  "builders": [
+
+    {
+      "type": "azure-arm",
+      "tenant_id": "{{user `azure_tenant_id`}}",
+      "subscription_id": "{{user `azure_subscription_id`}}",
+      "client_id": "{{user `azure_client_id`}}",
+      "client_secret": "{{user `azure_client_secret`}}",
+      "build_resource_group_name": "{{user `resource_group_name`}}",
+      "os_type": "Windows",
+      "image_publisher": "MicrosoftWindowsServer",
+      "image_offer": "WindowsServer",
+      "image_sku": "2022-Datacenter",
+      "image_version": "latest",
+      "vm_size": "{{user `vm_size`}}",
+      "managed_image_name": "packer-image-{{user `vm_name`}}",
+      "managed_image_resource_group_name": "{{user `resource_group_name`}}",
+      "communicator": "winrm",
+      "winrm_use_ssl": true,
+      "winrm_insecure": true,
+      "winrm_timeout": "5m",
+      "winrm_username": "packer",
+      "winrm_password": "P@ssw0rd!",
+
+      "azure_tags": {
+        "dept": "test",
+        "task": "Image deployment"
+      }
+    }
+  ],
+
+
+  "provisioners": [
+   
+     {
+      "type": "powershell",
+      "inline": [
+        "Add-WindowsFeature Web-Server",
+        "while ((Get-Service RdAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
+        "while ((Get-Service WindowsAzureGuestAgent).Status -ne 'Running') { Start-Sleep -s 5 }",
+        "& $env:SystemRoot\\System32\\Sysprep\\Sysprep.exe /oobe /generalize /quiet /quit",
+        "while($true) { $imageState = Get-ItemProperty HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Setup\\State | Select ImageState; if($imageState.ImageState -ne 'IMAGE_STATE_GENERALIZE_RESEAL_TO_OOBE') { Write-Output $imageState.ImageState; Start-Sleep -s 10  } else { break } }"
+      ]
+      }
+  ]
+
+}
+
+
+
