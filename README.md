@@ -253,7 +253,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [GitHub]: https://img.shields.io/badge/GitHub-20232A?style=for-the-badge&logo=GitHub&logoColor=61DAFB
 [GitHub-url]: https://github.com/
 [Azure]: https://img.shields.io/badge/Azure-35495E?style=for-the-badge&logo=Azure&logoColor=4FC08D
-[Azure-url]: https://portal.azure.com
+[Azure-url]: https://azure.microsoft.com/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
