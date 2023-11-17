@@ -104,7 +104,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [![Packer][Packer]][Packer-url]
 * [![GitHub][GitHub]][GitHub-url]
-* [![Vue][Vue.js]][Vue-url]
+* [![Azure][Azure]][Azure-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
@@ -252,8 +252,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [Packer-url]: https://developer.hashicorp.com/packer/integrations/hashicorp/azure
 [GitHub]: https://img.shields.io/badge/GitHub-20232A?style=for-the-badge&logo=GitHub&logoColor=61DAFB
 [GitHub-url]: https://github.com/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
+[Azure]: https://img.shields.io/badge/Azure-35495E?style=for-the-badge&logo=Azure&logoColor=4FC08D
+[Azure-url]: https://portal.azure.com
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
