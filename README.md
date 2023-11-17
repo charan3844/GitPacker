@@ -103,7 +103,7 @@ Use the `README.md` to get started.
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![Packer][Packer]][Packer-url]
-* [![React][React.js]][React-url]
+* [![GitHub][GitHub]][GitHub-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
@@ -250,8 +250,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: images/screenshot.png
 [Packer]: https://img.shields.io/badge/Packer-000000?style=for-the-badge&logo=Packer&logoColor=white
 [Packer-url]: https://developer.hashicorp.com/packer/integrations/hashicorp/azure
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+[GitHub]: https://img.shields.io/badge/GitHub-20232A?style=for-the-badge&logo=GitHub&logoColor=61DAFB
+[GitHub-url]: https://github.com/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
