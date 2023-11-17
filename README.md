@@ -20,7 +20,8 @@
 -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Issues][issues-shield]][issues-url]
+[![Issues][issues-shield]][issues-url
+[![Stargazers][stars-shield]][stars-url]
 
 
 
@@ -246,6 +247,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-url]: https://github.com/charan3844/GitPacker/stargazers
 [issues-shield]: https://img.shields.io/github/issues/charan3844/GitPacker.svg?style=for-the-badge
 [issues-url]: https://github.com/charan3844/GitPacker-Template/issues
+[stars-shield]: https://img.shields.io/github/stars/charan3844/GitPacker.svg?style=for-the-badge
+[stars-url]: https://github.com/charan3844/GitPacker/stargazers
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
