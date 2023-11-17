@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/charan3844/GitPacker/pull/73 -->
+<!-- Improved compatibility of back to top link: See: https://github.com/charan3844/GitPacker/pull -->
 <a name="readme-top"></a>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -20,7 +20,6 @@
 -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
 
