@@ -252,8 +252,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [Packer-url]: https://developer.hashicorp.com/packer/integrations/hashicorp/azure
 [GitHub]: https://img.shields.io/badge/GitHub-20232A?style=for-the-badge&logo=GitHub&logoColor=61DAFB
 [GitHub-url]: https://github.com/
-[Azure]: https://img.shields.io/badge/Azure-35495E?style=for-the-badge&logo=Azure&logoColor=4FC08D
-[Azure-url]: https://azure.microsoft.com/
+[Azure]: https://img.shields.io/badge/Azure-0769AD?style=for-the-badge&logo=Azure&logoColor=white
+[Azure-url]: https://portal.azure.com
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
