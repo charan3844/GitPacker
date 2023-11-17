@@ -58,7 +58,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -131,28 +130,17 @@ How we can install the software's
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Set up the GitHub
+- [x] Create the Packer Build file on JSON format
+- [x] Create YAML/workflow file
+- [x] Fix the issues
+- [x] Build the Azure Custom Image using packer build
+- [ ] Publish the Image
+- [ ] Migrate the Image
+  
 
 See the [open issues](/issues) for a full list of proposed features (and known issues).
 
@@ -163,8 +151,7 @@ See the [open issues](/issues) for a full list of proposed features (and known i
 <!-- CONTRIBUTING -->
 ## Contributing
 
-
-1. Fork the Project
+1. Create a one Repository or else Fork the Repository
 2. Create your Feature Branch (`git checkout -b Branchname`)
 3. Commit your Changes (`git commit -m "Branchname"`)
 4. Push to the Branch (`git push -u origin main`)
