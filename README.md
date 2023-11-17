@@ -8,6 +8,7 @@
 *** See the bottom of this document for the declaration of the reference variables
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
+
 -->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -15,7 +16,7 @@
 [![Stargazers][stars-shield]][stars-url]
 
 
-<!-- PROJECT LOGO -->
+<!-- CSG -->
 <br />
 <div align="center">
   <a href="https://github.com/charan3844/GitPacker">
@@ -25,7 +26,7 @@
   <h3 align="center">CSG</h3>
 
   <p align="center">
-    Readme file about the CSG Project and how to build the Azure Image 
+    Readme file about the CSG Project and how to build the Azure Custom Image 
     <br />
     <a href="https://github.com/charan3844/GitPacker"><strong>Explore the docs »</strong></a>
     <br />
