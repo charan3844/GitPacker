@@ -248,7 +248,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [stars-shield]: https://img.shields.io/github/stars/charan3844/GitPacker.svg?style=for-the-badge
 [stars-url]: https://github.com/charan3844/GitPacker/stargazers
 [product-screenshot]: images/screenshot.png
-[Packer]: https://img.shields.io/badge/Packer-000000?style=for-the-badge&logo=Packer&logoColor=white
+[Packer]: https://img.shields.io/badge/Packer-url?style=for-the-badge&logo=Packer&logoColor=white
 [Packer-url]: https://developer.hashicorp.com/packer/integrations/hashicorp/azure
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
