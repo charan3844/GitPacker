@@ -103,7 +103,7 @@ Use the `README.md` to get started.
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![GitHub][GitHub]][GitHub-url]
-* [![Azure][Azure]][Azure-url
+* [![Azure][Azure]][Azure-url]
 * [![Packer][Packer]][Packer-url]
   
 
@@ -248,6 +248,6 @@ Use this space to list resources you find helpful and would like to give credit 
 [Packer-url]: https://developer.hashicorp.com/packer/integrations/hashicorp/azure
 [GitHub]: https://img.shields.io/badge/GitHub-20232A?style=for-the-badge&logo=GitHub&logoColor=61DAFB
 [GitHub-url]: https://github.com/
-[Azure]: https://img.shields.io/badge/Azure-000000?style=for-the-badge&logo=Azure&logoColor=white
+[Azure]: https://img.shields.io/badge/Azure-0769AD?style=for-the-badge&logo=Azure&logoColor=white
 [Azure-url]: https://portal.azure.com
 
