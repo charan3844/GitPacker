@@ -24,9 +24,6 @@
 [![Stargazers][stars-shield]][stars-url]
 
 
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -37,7 +34,7 @@
   <h3 align="center">CSG</h3>
 
   <p align="center">
-    Readme file about the CSG
+    Readme file about the CSG Project and how to build the Azure Image 
     <br />
     <a href="https://github.com/charan3844/GitPacker"><strong>Explore the docs »</strong></a>
     <br />
@@ -81,7 +78,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
@@ -190,16 +186,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
