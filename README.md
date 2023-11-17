@@ -246,7 +246,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot]: images/screenshot.png
 [Packer]: https://img.shields.io/badge/Packer-000000?style=for-the-badge&logo=Packer&logoColor=blue
 [Packer-url]: https://developer.hashicorp.com/packer/integrations/hashicorp/azure
-[GitHub]: https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=GitHub&logoColor=black
+[GitHub]: https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=GitHub&logoColor=white
 [GitHub-url]: https://github.com/
 [Azure]: https://img.shields.io/badge/Azure-000000?style=for-the-badge&logo=MicrosoftAzure&logoColor=blue
 [Azure-url]: https://portal.azure.com
