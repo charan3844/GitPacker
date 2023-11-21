@@ -183,7 +183,7 @@ Project Link: [https://github.com/eng-citrix/image-creation-pipelin.git](https:/
 [contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
 [forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[issues-shield]: https://img.shields.io/github/eng-citrix/image-creation-pipeline.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/eng-citrix/image-creation-pipeline.svg?style=for-the-badge
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 
 [Packer]: https://img.shields.io/badge/Packer-000000?style=for-the-badge&logo=Packer&logoColor=blue
