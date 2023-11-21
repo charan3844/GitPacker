@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/eng-citrix/image-creation-pipeline.git -->
+<!-- Improved compatibility of back to top link: See: https://github.com/charan3844/GitPacker/ -->
 <a name="readme-top"></a>
 
 <!--
@@ -180,8 +180,8 @@ Project Link: [https://github.com/eng-citrix/image-creation-pipelin.git](https:/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[forks-shield]: https://img.shields.io/github/forks/charan3844/GitPacker.svg?style=for-the-badge
+[forks-url]: https://github.com/charan3844/GitPacker/network/members
 [issues-shield]: https://img.shields.io/github/issues/eng-citrix/image-creation-pipeline.svg?style=for-the-badge
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
 
