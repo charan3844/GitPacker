@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/eng-citrix/image-creation-pipeline -->
+<!-- Improved compatibility of back to top link: See: https://github.com/eng-citrix/image-creation-pipeline.git -->
 <a name="readme-top"></a>
 
 <!--
